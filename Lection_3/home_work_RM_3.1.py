@@ -8,6 +8,7 @@ def modification(lst):
     my_list1.append(lst[0])
     return my_list1
 
+
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 
 
@@ -20,7 +21,6 @@ data = [
 test_data = [
     [3, 2, 1], [5, 2, 3, 4, 1], ['с', 'л', 'о', 'н']
 ]
-
 
 for i, d in enumerate(data):
     assert modification(d) == test_data[i], f'С набором {d} есть ошибка, не проходит проверку'

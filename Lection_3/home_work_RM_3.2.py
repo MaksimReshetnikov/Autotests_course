@@ -10,6 +10,7 @@ def get_list_info(lst):
     average = round(sum_list / len(lst), 2)
     return min_elem, max_elem, sum_list, average
 
+
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 
 
@@ -23,7 +24,6 @@ data = [
 test_data = [
     (1, 7, 28, 4.0), (-7, -1, -28, -4.0), (-308, 209, 68, 9.71), (-3, 3, 0, 0.0)
 ]
-
 
 for i, d in enumerate(data):
     assert get_list_info(d) == test_data[i], f'С набором {d} есть ошибка, не проходит проверку'
