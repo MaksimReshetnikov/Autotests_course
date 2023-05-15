@@ -13,43 +13,20 @@
 # [1,4] => 5 вышел
 # [4] => 1 вышел, 4 остался последним т.е. выжившим - это наш ответ survivor.
 
-num_people = 5
-kill_num = 2
-peoples = []
-for i in range(1, 6):
-    peoples.append(i)
-    i = i+1
-print(peoples)
-len_peoples = len(peoples)
-peoples.pop(kill_num-1)
-print(peoples)
-kill_next_ind = (kill_num - 1) + kill_num - 1
-print(kill_next_ind)
-peoples.pop(kill_next_ind)
-print(peoples)
-kill_next_ind = kill_next_ind - len(peoples)
-print(kill_next_ind)
-peoples.pop(kill_next_ind)
-print(peoples)
-kill_next_ind = kill_next_ind + kill_num - 1
-print(kill_next_ind)
-peoples.pop(kill_next_ind)
-print(peoples)
-#for i in range(2, len(list1)-1, number):
-#    print(list1[i], list1)
-#    list1.pop(i)
-#print(list1)
-
-
-
-
-
-
-
-"""
 def josephus_task(num_people, kill_num):
-    # Здесь нужно написать код
-    return survivor
+    peoples = []
+    for participant in range(1, num_people + 1):
+        peoples.append(participant)
+    kill_next_index = 0
+
+    for i in range(num_people - 1):
+        kill_next_index = kill_next_index + kill_num - 1
+        while kill_next_index >= len(peoples):
+            kill_next_index = kill_next_index - len(peoples)
+        peoples.pop(kill_next_index)
+
+    return peoples[0]
+
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 
@@ -62,9 +39,7 @@ test_data = [
     4, 10, 1, 13, 100, 1130, 379
 ]
 
-
 for i, d in enumerate(data):
     assert josephus_task(*d) == test_data[i], f'С набором {d} есть ошибка, не проходит проверку'
     print(f'Тестовый набор {d} прошёл проверку')
 print('Всё ок')
-"""
