@@ -7,7 +7,6 @@
 
 
 def repeats(our_str):
-
     letter_dict = {}
     new_str = ""
     for letter in our_str:
