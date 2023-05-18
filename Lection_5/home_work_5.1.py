@@ -7,6 +7,7 @@
 
 
 def letter_stat(our_str):
+
     letters_lst = list(our_str)
     letters_dict = {}
     for letter in letters_lst:
