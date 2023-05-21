@@ -17,6 +17,7 @@ def repeats(our_str):
         new_str += f"{letter}_{letter_dict[letter]}"
     return new_str
 
+
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 
 data = ['letter', "карабасбарабас", "околоводопроводного", "еженедельное", "Караганда", "контрреформатор",

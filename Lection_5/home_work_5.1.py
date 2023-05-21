@@ -13,6 +13,7 @@ def letter_stat(our_str):
         letters_dict[letter] = letters_lst.count(letter)
     return letters_dict
 
+
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 
 data = ['letter', "honduras", "тегусигальпа", "автотестирование", "тензор", "управлениекачеством", 'мануальщик', '',
