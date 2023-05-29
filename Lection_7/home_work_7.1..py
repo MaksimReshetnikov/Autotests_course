@@ -15,15 +15,24 @@ class Segment:
         self.first_coordinate_point = first_coordinate_point
         self.second_coordinate_point = second_coordinate_point
 
-    def length(self):  # Метод возвращает длину отрезка (округляет до 2 знаков после запятой)
+    def length(self):
+
+        # Метод возвращает длину отрезка (округляет до 2 знаков после запятой)
+
         segment_length = (((self.second_coordinate_point[0] - self.first_coordinate_point[0]) ** 2) + (
                 (self.second_coordinate_point[1] - self.first_coordinate_point[1]) ** 2)) ** 0.5
         return (round((segment_length), 2))
 
-    def x_axis_intersection(self):  # Метод возвращает True, если отрезок пересекает ось ОХ (произведение координат у<= 0)
+    def x_axis_intersection(self):
+
+        # Метод возвращает True, если отрезок пересекает ось ОХ (произведение координат у<= 0)
+
         return ((self.first_coordinate_point[1] * self.second_coordinate_point[1]) <= 0)
 
-    def y_axis_intersection(self):  # Метод возвращает True, если отрезок пересекает ось ОY (произведение координат x<= 0)
+    def y_axis_intersection(self):
+
+        # Метод возвращает True, если отрезок пересекает ось ОY (произведение координат x<= 0)
+
         return ((self.first_coordinate_point[0] * self.second_coordinate_point[0]) <= 0)
 
 
