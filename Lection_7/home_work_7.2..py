@@ -23,6 +23,36 @@
 
 # Здесь пишем код
 
+class PersonInfo:
+    def __init__(self, name, age, *subdivision):                  # Конструктор экземляров класса
+
+        self.name = name
+        self.age = age
+        self.subdivision = subdivision
+
+    def short_name(self):                                       # Метод возвращает строку из Фамилии и инициала Имени
+
+        short_name = (self.name.split()[1] + " " + self.name.split()[0][0] + ".")
+        return short_name
+
+    def path_deps(self):            # Метод возвращает путь "Головное подразделение --> ... --> Конечное подразделение"
+
+        path_subdivision = ' --> '.join((self.subdivision))
+        return path_subdivision
+
+    def new_salary(self):                                          # Метод возвращает проиндексированную зарплату
+        my_str = ''.join((self.subdivision))                       # Переведем в строку исходный кортеж
+
+        my_dict = {letter: my_str.count(letter) for letter in my_str}            # Создадим словарь ключь - буква,
+                                                                                 # значение - количество вхождений
+                                                                                 # в строку my_str
+
+        sorted_my_dict = sorted(my_dict.values(), reverse=True)         # Отсортируем значения в cловаре по возрастанию
+        result_salary = 1337 * self.age * sum(sorted_my_dict[:3])        # Результирующая зарплата по формуле
+
+        return result_salary
+
+
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 
 
@@ -46,7 +76,6 @@ data = [first_person.short_name,
         third_person.new_salary,
         fourth_person.new_salary
         ]
-
 
 test_data = ['Шленский А.', 'Валерьев П.', 'Артуров М.', 'Иванов И.',
 
