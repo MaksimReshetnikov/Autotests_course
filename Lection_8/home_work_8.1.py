@@ -18,23 +18,9 @@
 
 import unittest  # Не удалять
 
+
 # Здесь пишем код
-def treatment_sum(our_tuple):
-    try:
-        if len(our_tuple) == 2:
-            one, two = our_tuple
-            result = one + two
-            return result
-        elif len(our_tuple) < 2:
-            return 'Недостаточно данных'
-        else:
-            raise Exception('Много данных')
-    except TypeError:
-        return 'Нельзя сложить эти данные'
 
-
-
-"""
 def treatment_sum(input_tuple):
     if len(input_tuple) > 2:
         raise Exception('Много данных')
@@ -45,7 +31,8 @@ def treatment_sum(input_tuple):
             return sum(input_tuple)
         except TypeError:
             return 'Нельзя сложить эти данные'
-"""
+
+
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 
 
