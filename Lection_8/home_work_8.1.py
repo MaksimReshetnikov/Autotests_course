@@ -18,7 +18,6 @@
 
 import unittest  # Не удалять
 
-
 # Здесь пишем код
 
 def treatment_sum(input_tuple):
