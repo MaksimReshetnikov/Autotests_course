@@ -21,18 +21,19 @@ import unittest  # Не удалять
 class Trigon():
     def __init__(self, *attribute):
         self.attribute = attribute
-        for i in self.attribute:
-            if len(self.attribute) != 3:
-                raise IndexError("Передано", {len(self.attribute)}, "аргументов, а ожидается 3")
-            elif type(i) != int and type(i) != float:
-                raise TypeError('Стороны должны быть числами')
-            elif i <= 0:
-                raise ValueError('Стороны должны быть положительными')
-
-            else:
-                side_a, side_b, side_c = self.attribute
-                if ((side_a + side_b) <= side_c) or ((side_b + side_c) <= side_a) or ((side_c + side_a) <= side_b):
-                    raise Exception("Не треугольник")
+        try:
+            side_a, side_b, side_c = self.attribute
+            if ((side_a + side_b) <= side_c) or ((side_b + side_c) <= side_a) or ((side_c + side_a) <= side_b):
+                raise Exception("Не треугольник")
+        except:
+            for i in self.attribute:
+                if len(self.attribute) != 3:
+                    raise IndexError("Передано", {len(self.attribute)}, "аргументов, а ожидается 3")
+                elif type(i) != int and type(i) != float:
+                    raise TypeError('Стороны должны быть числами')
+                else:
+                    if i <= 0:
+                        raise ValueError('Стороны должны быть положительными')
 
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
